@@ -1,0 +1,44 @@
+<div class="max-w-md mx-auto mt-10 bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
+    <form [formGroup]="formExample" class="space-y-6" (ngSubmit)="onSubmit()">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Registro</h2>
+        <div class="mb-4">
+            <label class="block text-gray-700 dark:text-gray-300 mb-2" for="email">Correo electrónico</label>
+            <div class="relative flex items-center">
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                placeholder="ejemplo@correo.com"
+              />
+              @if (formExample.get('email')?.pending) {
+                <span
+                class="absolute right-3 flex items-center"
+                aria-label="Verificando email"
+              >
+                <svg class="animate-spin h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <span class="ml-2 text-xs text-blue-500">Verificando...</span>
+              </span>
+              }
+              
+            </div>
+            @if (formExample.get('email')?.touched && formExample.get('email')?.invalid) {
+              <span class="text-red-500 text-sm mt-1">
+                {{getEmailError(formExample.get('email')!)}}
+              </span>
+            }
+          </div>
+       
+
+<div class="flex justify-end space-x-4">
+    <button type="submit" [disabled]="!formExample.valid"
+        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed">
+        Guardar
+    </button>
+    
+</div>
+    </form>
+</div>
