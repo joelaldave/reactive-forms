@@ -6,7 +6,7 @@ import { emailAsyncValidator, getEmailError } from '../../utils/email-validator'
 
 @Component({
   selector: 'app-form-example',
-  imports: [ReactiveFormsModule, JsonPipe, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './form-example.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
