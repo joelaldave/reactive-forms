@@ -1,10 +1,11 @@
 import { AbstractControl, AsyncValidatorFn, FormGroup, ValidationErrors } from '@angular/forms';
-import { Observable, map } from 'rxjs';
+import { Observable, debounceTime, map } from 'rxjs';
 import { EmailValidatorService } from '../services/email-validator.service';
 
 export function emailAsyncValidator(service: EmailValidatorService): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
         return service.checkEmail(control.value).pipe(
+            debounceTime(500), 
             map(permitted => (permitted ? null : { forbiddenEmail: true }))
         );
     };

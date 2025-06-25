@@ -1,59 +1,45 @@
-# ReactiveForms
+# Angular Reactive Forms Example
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Este proyecto es una demostración de formularios reactivos en Angular, incluyendo validaciones síncronas y asíncronas, integración con TailwindCSS y buenas prácticas de organización de código.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- Formularios reactivos con Angular (`@angular/forms`)
+- Validaciones síncronas y asíncronas (simulación de validación de email contra backend)
+- Estilos modernos con TailwindCSS y soporte para modo oscuro
+- Componentes reutilizables y código organizado
+- Ejemplo de integración de servicios y validadores personalizados
 
-```bash
-ng serve
-```
+## Instalación
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/angular-reactive-forms.git
+   cd angular-reactive-forms
+   ```
 
-## Code scaffolding
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. Ejecuta la aplicación:
+   ```bash
+   ng serve
+   ```
+   Luego abre [http://localhost:4200](http://localhost:4200) en tu navegador.
 
-```bash
-ng generate component component-name
-```
+## Estructura principal
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `src/app/features/validations-form/pages/form-example/`: Página principal del formulario reactivo.
+- `src/app/features/validations-form/services/`: Servicios para validaciones asíncronas.
+- `src/app/features/validations-form/utils/`: Validadores personalizados y utilidades.
+- `src/styles.css`: Estilos globales y configuración de TailwindCSS.
 
-```bash
-ng generate --help
-```
+## Personalización
 
-## Building
+- Puedes modificar los validadores en `utils` o los servicios para conectar con tu backend real.
+- Los estilos pueden adaptarse fácilmente gracias a TailwindCSS.
 
-To build the project run:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+¡Contribuciones y sugerencias son bienvenidas!
