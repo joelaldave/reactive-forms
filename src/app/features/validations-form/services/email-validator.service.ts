@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { delay, map, Observable, of } from 'rxjs';
+import { delay, map, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class EmailValidatorService {
     // y verifica si el email está en la lista de correos prohibidos
     // devuelve un observable que emite true si el email es permitido y false si no lo es
     return of(email).pipe(
+      tap(value => console.log(`Validating email: ${value}`)),
       delay(1000),
       map(value => forbiddenEmails.includes(value) ? false : true)
     );
